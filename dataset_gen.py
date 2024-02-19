@@ -19,6 +19,11 @@ def check_kaggle_api():
     return bool(ret.stderr)
 
 def create_dataset():
+    if not check_kaggle_api():
+        subprocess.run('pip install kaggle', shell=True)
     for cwd, command in commands:
         subprocess.run(command, shell=True, cwd=cwd)
     print('Dataset created')
+
+if __name__ == '__main__':
+    check_for_datasets()
