@@ -13,14 +13,7 @@ def check_for_datasets():
     if not (base_path.exists() and all(dataset.exist() for dataset in datasets)):
         create_dataset()
 
-
-def check_kaggle_api():
-    ret = subprocess.run('kaggle -h', shell=True, capture_output=True)
-    return bool(ret.stderr)
-
 def create_dataset():
-    if not check_kaggle_api():
-        subprocess.run('pip install kaggle', shell=True)
     for cwd, command in commands:
         subprocess.run(command, shell=True, cwd=cwd)
     print('Dataset created')
