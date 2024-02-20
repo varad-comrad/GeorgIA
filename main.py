@@ -1,6 +1,6 @@
 import pathlib
 import subprocess
-import pyautogui as pag
+import dataset_gen
 
 
 def check_for_model():
@@ -13,17 +13,11 @@ def create_model():
     subprocess.run('python georgia.py', shell=True)
     subprocess.run('rm georgia.py', shell=True)
 
-def get_screenshot():
-    pass
-
-def predict():
-    pass
 
 def main():
+    dataset_gen.load_datasets()
     if not check_for_model():
         create_model()
-    get_screenshot()
-    predict()    
 
 if __name__ == '__main__':
     main()

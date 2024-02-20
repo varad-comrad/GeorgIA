@@ -7,7 +7,7 @@ commands = [('.', 'mkdir datasets'),
             ('datasets', 'kaggle datasets download -d ubitquitin/geolocation-geoguessr-images-50k')]
 
 
-def check_for_datasets():
+def load_datasets():
     base_path = pathlib.Path(__file__).parent / 'datasets'
     datasets = base_path / 'geolocation-geoguessr-images-50k.zip', base_path / ''
     if not (base_path.exists() and all(dataset.exist() for dataset in datasets)):
@@ -19,4 +19,4 @@ def create_dataset():
     print('Dataset created')
 
 if __name__ == '__main__':
-    check_for_datasets()
+    load_datasets()
