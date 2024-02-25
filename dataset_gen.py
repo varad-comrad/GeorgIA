@@ -4,8 +4,8 @@ import pathlib
 
 commands = [('.', 'mkdir datasets'),
             ('datasets', 'kaggle datasets download -d annaglass1/geoguessr-55countries'),
-            ('datasets', 'kaggle datasets download -d ubitquitin/geolocation-geoguessr-images-50k')]
-
+            # ('datasets', 'kaggle datasets download -d ubitquitin/geolocation-geoguessr-images-50k')
+]
 
 def load_datasets():
     base_path = pathlib.Path(__file__).parent / 'datasets'

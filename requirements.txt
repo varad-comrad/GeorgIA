@@ -2,3 +2,4 @@ torch
 torchvision
 jupyter
 kaggle
+torchsummary
